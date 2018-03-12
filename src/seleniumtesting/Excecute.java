@@ -1,18 +1,29 @@
 package seleniumtesting;
 
-import issuesTestCode.LearningCode;
+import java.util.HashMap;
+import java.util.Map;
+
+import issuesTestCode.LoginTest;
 
 public class Excecute {
 
 	public static void main(String[] args) {
-		//		driver.get(comman.Comman.Data.TEST_URL);
-		//		driver.findElement(By.id("")).sendKeys("Suhas");;
+		Map<String, Boolean> testResult = new HashMap<String, Boolean>();
 		try {
-		LearningCode.run();
+			testResult.putAll(LoginTest.run());
 		} catch (Exception e) {
+			System.out.println("*****************ERROR******************");
 			System.out.println(e.getMessage());
 		} finally {
-//			Config.stop(true);
+			int i=0;
+			System.out.println("*****************RESULT******************");
+
+			for(Map.Entry<String, Boolean> entry : testResult.entrySet()) {
+			    String key = entry.getKey();
+			    Boolean value = entry.getValue();
+				System.out.println(++i +") "+key+" : "+ value);
+			}
+			Config.stop(true,true);
 		}
 	}
 

@@ -7,7 +7,7 @@ public class Comman {
 		public final static String ADMIN_EMAIL_CURRECT="admin@ulabsystems.net";
 		public final static String ADMIN_PASS_CURRECT="Suhas@312";
 
-		public final static String ADMIN_EMAIL_WRONG="admin@ulabsystems.net";
+		public final static String ADMIN_EMAIL_WRONG="admin@ulabsystems.ne";
 		public final static String ADMIN_PASS_WRONG="Suhsas@31223";
 	}
 }
