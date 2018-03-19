@@ -1,7 +1,5 @@
 package issuesTestCode;
 
-import org.openqa.selenium.WebElement;
-
 import comman.Comman;
 import seleniumtesting.Driver;
 
@@ -15,11 +13,11 @@ public class LearningCode {
       Driver.getByLinkText("Compile").click();
       Thread.sleep(2000);
 
-      WebElement email = Driver.getElementByXpath("//*[@placeholder='email']");
-      email.sendKeys(Comman.Data.ADMIN_EMAIL_CURRECT);
-      WebElement pass = Driver.getElementByXpath("//*[@placeholder='password']");
-      pass.sendKeys(Comman.Data.ADMIN_PASS_CURRECT);
-      Driver.getByLinkText("Login").click();
+//      WebElement email = Driver.getElementByXpath("//*[@placeholder='email']");
+//      email.sendKeys(Comman.Data.ADMIN_EMAIL_CURRECT);
+//      WebElement pass = Driver.getElementByXpath("//*[@placeholder='password']");
+//      pass.sendKeys(Comman.Data.ADMIN_PASS_CURRECT);
+//      Driver.getByLinkText("Login").click();
 
 //		Driver.getDriver().findElement(By.cssSelector(".form-control[placeholder='email']")).sendKeys("sg312");
 //        WebElement pass = Driver.getElementByPlaceHolder("password");

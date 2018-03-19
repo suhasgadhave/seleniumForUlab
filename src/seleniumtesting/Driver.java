@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class Driver {
-	final static WebDriver driver=Config.driver;
+	static WebDriver driver=null;
 
 	public static WebElement getElementById(String id) {
 		return driver.findElement(By.id(id));
@@ -25,9 +25,14 @@ public class Driver {
 	public static WebElement getByLinkText(String name) {
 		return driver.findElement(By.linkText(name));
 	}
-	
 	public static WebDriver getDriver() {
+		if (driver==null) {
+			driver=Config.configFirefox();
+		}
 		return driver;
 	}
-
+	public static void restartBrowser() {
+		Config.stop(true, false);
+		driver=Config.configFirefox();
+	}
 }

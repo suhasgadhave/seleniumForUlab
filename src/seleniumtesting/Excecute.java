@@ -12,16 +12,29 @@ public class Excecute {
 		try {
 			testResult.putAll(LoginTest.run());
 		} catch (Exception e) {
-			System.out.println("*****************ERROR******************");
+			System.out.println("\n\n*****************ERROR******************");
 			System.out.println(e.getMessage());
 		} finally {
 			int i=0;
-			System.out.println("*****************RESULT******************");
-
+			Map<String, Boolean> failedTest = new HashMap<String, Boolean>();
+			System.out.println("\n\n*****************ALL RESULT******************");
 			for(Map.Entry<String, Boolean> entry : testResult.entrySet()) {
-			    String key = entry.getKey();
-			    Boolean value = entry.getValue();
+				String key = entry.getKey();
+				Boolean value = entry.getValue();
 				System.out.println(++i +") "+key+" : "+ value);
+				if (!value) {
+					failedTest.put(key, value);
+				}
+			}
+			
+			if (failedTest.size()>0) {
+				i=0;
+				System.out.println("\n\n*****************FAILED RESULT******************");
+				for(Map.Entry<String, Boolean> entry : failedTest.entrySet()) {
+					String key = entry.getKey();
+					Boolean value = entry.getValue();
+					System.out.println(++i +") "+key+" : "+ value);
+				}
 			}
 			Config.stop(true,true);
 		}
