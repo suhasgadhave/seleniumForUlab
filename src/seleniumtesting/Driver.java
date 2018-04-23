@@ -35,4 +35,7 @@ public class Driver {
 		Config.stop(true, false);
 		driver=Config.configFirefox();
 	}
+	public static String getTitle() {
+		return driver.getTitle();
+	}
 }
