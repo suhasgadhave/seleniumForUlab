@@ -42,7 +42,7 @@ public class Report {
 			if (!value) {
 				failedTest.put(key, value);
 			} else {
-				passedCasesIntblFormat+="<tr><td>"+key+"</td></tr>";
+				passedCasesIntblFormat+="<tr><td>"+"-"+key+"</td></tr>";
 				successfulCases++;
 			}
 		}
@@ -59,7 +59,7 @@ public class Report {
 				String key = entry.getKey();
 				Boolean value = entry.getValue();
 				System.out.println(++i +") "+key+" : "+ value);
-				failedCasesIntblFormat+="<tr><td>"+key+"</td></tr>";
+				failedCasesIntblFormat+="<tr><td>"+"-"+key+"</td></tr>";
 			}
 			failedCasesIntblFormat+="</table>";
 

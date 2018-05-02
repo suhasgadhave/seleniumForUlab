@@ -18,8 +18,8 @@ public class Excecute {
 				try {
 					tryCount++;
 					testResult = new HashMap<String, Boolean>();
-					//					testResult.putAll(LoginTest.run());
-					//			
+					testResult.putAll(LoginTest.run());
+								
 					User.setUser(Comman.Data.UserCredentail.CUST_OWNER_EMAIL_CURRECT, Comman.Data.UserCredentail.CUST_OWNER_PASS_CURRECT,
 							Comman.Data.UserCredentail.CUST_OWNER_COMP_NAME,Comman.Data.UserCredentail.CUST_OWNER_NAME, "Account Owner");
 					testResult.putAll(AccOwnerManagerTest.run());
